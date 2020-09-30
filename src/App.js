@@ -2,6 +2,8 @@ import React,{useState, useMemo} from 'react';
 import { BrowserRouter as Router , Switch, Route, Link }  from "react-router-dom" 
 import './App.css';
 import { MainContext } from './Context/MainContext';
+import Home from './Page/Home';
+import Shuffle from './Page/Shuffle';
 
 function App() {
 
@@ -21,7 +23,9 @@ function App() {
         </li>
       </ul>
      <Switch>
+        <Route exact path="/" component={Home}/>
 
+        <Route exact path="/shuffle" component={Shuffle}/>
      </Switch>
 
      
