@@ -1,5 +1,6 @@
 import React,{useContext} from 'react'
 import { MainContext } from '../Context/MainContext'
+import { Logout } from '../Helper/Logout'
 
 export default function Home() {
     const {user,setUser} = useContext(MainContext)
@@ -9,7 +10,10 @@ export default function Home() {
             {user?<><br/>
             
 
-            <button onClick={()=>setUser(null)}>
+            <button onClick={()=>{
+               
+                setUser(null)
+            }}>
                 remove data
             </button>
             </>
