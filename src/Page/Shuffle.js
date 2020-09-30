@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { MainContext } from '../Context/MainContext'
-
+import {Login} from "../Helper/Login"
 export default function Shuffle() {
     const {user,setUser} = useContext(MainContext)
     return (
@@ -13,7 +13,10 @@ export default function Shuffle() {
             {!user?<><br/>
             
 
-                <button onClick={()=>setUser({"name":"Udit","reg":"abc"})}>
+                <button onClick={async ()=>{
+                    let login = await Login();
+                    setUser(login)
+                    }}>
                 Click to check data
             </button>
             </>
